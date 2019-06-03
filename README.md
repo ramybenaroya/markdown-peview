@@ -2,7 +2,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 ## Live Demo
-[Markdown Preview Demo](https://github.com/ramybenaroya/markdown-preview)
+[Markdown Preview Demo](https://ramybenaroya.github.io/markdown-preview)
 
 ## Start Server
 - `npm i`
