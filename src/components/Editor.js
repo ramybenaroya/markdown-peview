@@ -3,6 +3,7 @@ import { func } from 'prop-types';
 import './Editor.css';
 
 const Editor = ({ onChange, id }) => {
+	console.log('<Editor/> Render')
 	const onTextareaChange = useCallback(({ target: { value } }) => onChange(value), [onChange]);
 	return (
 		<div className="Editor full-size box">
