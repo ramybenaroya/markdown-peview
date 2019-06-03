@@ -1,3 +1,13 @@
-import marked from 'marked';
+import marked, { Renderer } from 'marked';
 
-export default text => marked(text)
+class NewTabLinkRenderer extends Renderer {
+	link(...args) {
+		return super.link(...args).replace(/^<a/, '<a target="blank"');
+	}
+}
+
+marked.setOptions({
+	renderer: new NewTabLinkRenderer()
+});
+
+export default text => marked(text);
