@@ -1,5 +1,6 @@
 import React from 'react';
 import Editor from './Editor';
+import Preview from './Preview';
 import './App.css';
 
 const App = () => (
@@ -11,7 +12,7 @@ const App = () => (
 			<Editor id="editor" onChange={() => {}} />
 		</div>
 		<div className="App-right">
-			<div className="box full-size">Right</div>
+			<Preview id="preview" value={'<h1>Yo</h1>'} />
 		</div>
 	</div>
 );
