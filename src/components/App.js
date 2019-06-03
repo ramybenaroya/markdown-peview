@@ -1,4 +1,5 @@
 import React from 'react';
+import Editor from './Editor';
 import './App.css';
 
 const App = () => (
@@ -7,14 +8,10 @@ const App = () => (
 			<h2>Markdown Preview</h2>
 		</div>
 		<div className="App-left">
-			<div className="box full-size">
-				Left
-			</div>
+			<Editor id="editor" onChange={() => {}} />
 		</div>
 		<div className="App-right">
-			<div className="box full-size">
-				Right
-			</div>
+			<div className="box full-size">Right</div>
 		</div>
 	</div>
 );

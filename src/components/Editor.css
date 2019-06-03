@@ -1,0 +1,11 @@
+.Editor {
+	overflow: hidden;
+}
+
+.Editor-textarea {
+	resize: none;
+	box-sizing: border-box;
+	border: none;
+	padding: 10px;
+	font-family: monospace;
+}
