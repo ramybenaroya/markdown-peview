@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+	<div className="App">
+		<div className="App-header">
+			<h2>Markdown Preview</h2>
+		</div>
+		<div className="App-left">
+			<div className="box full-size">
+				Left
+			</div>
+		</div>
+		<div className="App-right">
+			<div className="box full-size">
+				Right
+			</div>
+		</div>
+	</div>
+);
+
+App.propTypes = {};
 
 export default App;
