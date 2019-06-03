@@ -7,7 +7,8 @@ class NewTabLinkRenderer extends Renderer {
 }
 
 marked.setOptions({
-	renderer: new NewTabLinkRenderer()
+    renderer: new NewTabLinkRenderer(),
+    breaks: true
 });
 
 export default text => marked(text);
