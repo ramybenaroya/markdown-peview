@@ -1,18 +1,20 @@
-import React from 'react'
-import { string } from 'prop-types'
-import './Preview.css'
+import React from 'react';
+import { string } from 'prop-types';
+import './Preview.css';
+import 'github-markdown-css';
+
 const Preview = ({ id, value }) => {
-    console.log('<Preview/> Render')
-    return <div id={id} className="Preview full-size markdown-body box" dangerouslySetInnerHTML={{__html: value}}></div>
-}
+	console.log('<Preview/> Render');
+	return <div id={id} className="Preview full-size markdown-body box" dangerouslySetInnerHTML={{ __html: value }} />;
+};
 
 Preview.propTypes = {
-    id: string,
-    value: string
-}
+	id: string,
+	value: string
+};
 
 Preview.defaultProps = {
-    value: ''
-}
+	value: ''
+};
 
-export default Preview
+export default Preview;

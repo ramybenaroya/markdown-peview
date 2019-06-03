@@ -1,8 +1,10 @@
 import { decorate, computed, observable } from 'mobx';
+import compileMarkdownToHtml from '../services/compile-markdown-to-html';
+
 class UiState {
 	markdown = '';
 	get compiledHtml() {
-		return this.markdown
+		return compileMarkdownToHtml(this.markdown);
 	}
 	updateMarkdown = value => {
 		this.markdown = value;
