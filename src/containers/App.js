@@ -1,6 +1,6 @@
 import React from 'react';
-import Editor from './Editor';
-import Preview from './Preview';
+import Editor from '../components/Editor';
+import Preview from '../components/Preview';
 import { useRootStore } from '../context/RootStore';
 import { useObserver } from 'mobx-react-lite'
 import './App.css';
