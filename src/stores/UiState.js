@@ -1,4 +1,4 @@
-import { decorate, computed, observable } from 'mobx';
+import { decorate, computed, observable, action } from 'mobx';
 import compileMarkdownToHtml from '../services/compile-markdown-to-html';
 
 class UiState {
@@ -17,6 +17,8 @@ class UiState {
 }
 
 export default decorate(UiState, {
+    defaultMarkdown: observable,
 	markdown: observable,
-	compiledHtml: computed
+    compiledHtml: computed,
+    updateMarkdown: action
 });
