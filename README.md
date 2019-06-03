@@ -10,6 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Open [http://localhost:3000](http://localhost:3000)
 
 ## Tech stack
+- Create React App
 - React (with hooks)
 - MobX
 - MobX React Lite
