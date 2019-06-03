@@ -2,6 +2,11 @@ import { decorate, computed, observable } from 'mobx';
 import compileMarkdownToHtml from '../services/compile-markdown-to-html';
 
 class UiState {
+    constructor({ defaultMarkdown }) {
+        this.defaultMarkdown = defaultMarkdown;
+        this.markdown = defaultMarkdown;
+    }
+    defaultMarkdown = '';
 	markdown = '';
 	get compiledHtml() {
 		return compileMarkdownToHtml(this.markdown);

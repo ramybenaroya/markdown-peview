@@ -6,7 +6,7 @@ import { Observer } from 'mobx-react-lite';
 import './App.css';
 
 const App = () => {
-	console.log('<App/> Render')
+	console.log('<App/> Render');
 	const { uiState } = useRootStore();
 	return (
 		<div className="App">
@@ -14,7 +14,15 @@ const App = () => {
 				<h2>Markdown Preview</h2>
 			</div>
 			<div className="App-left">
-				<Observer>{() => <Editor id="editor" onChange={uiState.updateMarkdown} />}</Observer>
+				<Observer>
+					{() => (
+						<Editor
+							id="editor"
+							initialValue={uiState.defaultMarkdown}
+							onChange={uiState.updateMarkdown}
+						/>
+					)}
+				</Observer>
 			</div>
 			<div className="App-right">
 				<Observer>{() => <Preview id="preview" value={uiState.compiledHtml} />}</Observer>

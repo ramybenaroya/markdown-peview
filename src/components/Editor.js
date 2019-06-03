@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 import './Editor.css';
 
-const Editor = ({ onChange, id }) => {
-	console.log('<Editor/> Render')
+const Editor = ({ id, onChange, initialValue }) => {
+	console.log('<Editor/> Render');
 	const onTextareaChange = useCallback(({ target: { value } }) => onChange(value), [onChange]);
 	return (
 		<div className="Editor full-size box">
@@ -11,6 +11,7 @@ const Editor = ({ onChange, id }) => {
 				id={id}
 				className="Editor-textarea full-size"
 				onChange={onTextareaChange}
+				defaultValue={initialValue}
 				placeholder="Start typing your Markdown code"
 			/>
 		</div>
@@ -18,7 +19,13 @@ const Editor = ({ onChange, id }) => {
 };
 
 Editor.propTypes = {
+	id: string,
+	initialValue: string,
 	onChange: func.isRequired
+};
+
+Editor.defaultProps = {
+	initialValue: ''
 };
 
 export default Editor;
