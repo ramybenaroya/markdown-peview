@@ -1,21 +1,27 @@
 import React from 'react';
 import Editor from './Editor';
 import Preview from './Preview';
+import { useRootStore } from '../context/RootStore';
+import { useObserver } from 'mobx-react-lite'
 import './App.css';
 
-const App = () => (
-	<div className="App">
-		<div className="App-header">
-			<h2>Markdown Preview</h2>
+const App = () => {
+	const { uiState } = useRootStore()
+	const ret = useObserver(() =>
+		<div className="App">
+			<div className="App-header">
+				<h2>Markdown Preview</h2>
+			</div>
+			<div className="App-left">
+				<Editor id="editor" onChange={uiState.updateMarkdown} />
+			</div>
+			<div className="App-right">
+				<Preview id="preview" value={uiState.compiledHtml} />
+			</div>
 		</div>
-		<div className="App-left">
-			<Editor id="editor" onChange={() => {}} />
-		</div>
-		<div className="App-right">
-			<Preview id="preview" value={'<h1>Yo</h1>'} />
-		</div>
-	</div>
-);
+	);
+	return ret
+};
 
 App.propTypes = {};
 
